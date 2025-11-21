@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!DOCTYPE html&gt;</span></p>
+<p class="p2"><span class="s1">&lt;html lang="tr"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;head&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;MyPro Exchange - Admin Mode&lt;/title&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>body { background-color: #0b0e11; color: #eaecef; font-family: Arial, sans-serif; margin: 0; padding: 0; overflow: hidden; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.header { background-color: #181a20; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2b3139; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.logo { font-size: 24px; font-weight: bold; color: #fcd535; } /* Binance sarısı */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.main-container { display: flex; height: 92vh; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>/* Sol Taraf - Grafik */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.chart-section { flex: 3; border-right: 1px solid #2b3139; display: flex; flex-direction: column; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.chart-header { padding: 10px; background: #181a20; font-size: 20px; font-weight: bold; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.price-display { font-size: 28px; margin-left: 10px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.green-text { color: #0ecb81; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.red-text { color: #f6465d; }</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>/* Sağ Taraf - Order Book &amp; İşlem */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.side-panel { flex: 1; display: flex; flex-direction: column; background: #181a20; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>/* Emir Defteri */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.order-book { height: 50%; overflow: hidden; padding: 10px; font-size: 12px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.ob-row { display: flex; justify-content: space-between; margin-bottom: 2px; cursor: pointer; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.ob-row:hover { background-color: #2b3139; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.ask { color: #f6465d; } /* Satışlar Kırmızı */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.bid { color: #0ecb81; } /* Alışlar Yeşil */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.current-price { text-align: center; font-size: 18px; padding: 10px; border-top: 1px solid #2b3139; border-bottom: 1px solid #2b3139; font-weight: bold; }</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>/* Admin / Manipülasyon Paneli */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.admin-panel { padding: 15px; border-top: 2px solid #fcd535; background: #2b3139; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.admin-title { color: #fcd535; font-weight: bold; margin-bottom: 10px; display: block; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.btn { width: 100%; padding: 10px; margin-bottom: 5px; border: none; cursor: pointer; font-weight: bold; color: white; border-radius: 4px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.btn-pump { background-color: #0ecb81; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.btn-dump { background-color: #f6465d; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.btn-bot { background-color: #3b82f6; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>input[type="number"] { width: 90%; padding: 8px; margin-bottom: 5px; background: #0b0e11; border: 1px solid #474d57; color: white; }</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script type="text/javascript" src="https://s3.tradingview.com/tv.js"&gt;&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p2"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;div class="header"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="logo"&gt;MyExchange PRO&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span&gt;Kullanıcı: &lt;b&gt;Admin&lt;/b&gt;&lt;/span&gt; |<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span&gt;Bakiye: &lt;b&gt;1,000,000 USDT&lt;/b&gt;&lt;/span&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;div class="main-container"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="chart-section"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="chart-header"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>BTC/USDT<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span id="livePrice" class="price-display green-text"&gt;Loading...&lt;/span&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="tv_chart_container" style="height: 100%;"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="side-panel"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="order-book" id="asksList"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="current-price" id="midPrice"&gt;---&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="order-book" id="bidsList"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="admin-panel"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="admin-title"&gt;⚡ PİYASA YAPICI (ADMIN)&lt;/span&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="btn btn-bot" onclick="toggleBot()"&gt;🤖 Botu Başlat/Durdur&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div style="margin-top:10px; display:flex; gap:5px;"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn-pump" onclick="manipulate('pump')"&gt;🚀 FUMP (Pump)&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;button class="btn btn-dump" onclick="manipulate('dump')"&gt;📉 DUMP (Çak)&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;input type="number" id="manualPrice" placeholder="Manuel Fiyat Gir (Örn: 98000)"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button class="btn" style="background:#555;" onclick="setManualPrice()"&gt;Fiyatı Sabitle&lt;/button&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;script&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>// --- AYARLAR ---</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>let currentPrice = 98000.00;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>let botRunning = true;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>let manipulationActive = false;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>// TradingView Grafiğini Yükle</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>new TradingView.widget({</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"autosize": true,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"symbol": "BINANCE:BTCUSDT",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"interval": "1",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"timezone": "Etc/UTC",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"theme": "dark",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"style": "1",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"locale": "tr",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"toolbar_bg": "#f1f3f6",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"enable_publishing": false,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"hide_side_toolbar": false,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"allow_symbol_change": true,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>"container_id": "tv_chart_container"</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>// --- BINANCE GERÇEK FİYAT BAĞLANTISI ---</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>// Gerçekçi olması için Binance'den veri çekiyoruz, ama manipülasyon yapınca bunu keseceğiz.</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>const ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>ws.onmessage = (event) =&gt; {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if(!manipulationActive) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>let stockObject = JSON.parse(event.data);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>currentPrice = parseFloat(stockObject.p);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>updateUI(currentPrice);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>// --- MARKET MAKER BOTU (TAHTA DOLDURMA) ---</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>function generateOrderBook(price) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>let asksHtml = '';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>let bidsHtml = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>// Rastgelelik ekle</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>let volatility = price * 0.0005; // %0.05 oynama</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>// Satış Emirleri (Kırmızı - Üst)</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>for(let i=10; i&gt;0; i--) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>let p = (price + (i * 5) + (Math.random() * volatility)).toFixed(2);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>let amount = (Math.random() * 2).toFixed(4);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>asksHtml += `&lt;div class="ob-row"&gt;&lt;span class="red-text"&gt;${p}&lt;/span&gt; &lt;span&gt;${amount}&lt;/span&gt;&lt;/div&gt;`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>// Alış Emirleri (Yeşil - Alt)</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>for(let i=1; i&lt;11; i++) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>let p = (price - (i * 5) - (Math.random() * volatility)).toFixed(2);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>let amount = (Math.random() * 2).toFixed(4);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>bidsHtml += `&lt;div class="ob-row"&gt;&lt;span class="green-text"&gt;${p}&lt;/span&gt; &lt;span&gt;${amount}&lt;/span&gt;&lt;/div&gt;`;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('asksList').innerHTML = asksHtml;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('bidsList').innerHTML = bidsHtml;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>// --- ARAYÜZ GÜNCELLEME ---</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>function updateUI(price) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>let priceEl = document.getElementById('livePrice');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>let midEl = document.getElementById('midPrice');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>let displayPrice = price.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>priceEl.innerText = displayPrice + " $";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>midEl.innerText = displayPrice;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>// Renk değişimi efekti</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>priceEl.className = (Math.random() &gt; 0.5) ? "price-display green-text" : "price-display red-text";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>midEl.style.color = (Math.random() &gt; 0.5) ? "#0ecb81" : "#f6465d";</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if(botRunning) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>generateOrderBook(price);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>// --- MANİPÜLASYON FONKSİYONLARI ---</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>function toggleBot() {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>botRunning = !botRunning;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>alert(botRunning ? "Bot Çalıştırıldı: Tahta otomatik doluyor." : "Bot Durduruldu: Tahta dondu.");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>function manipulate(type) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>manipulationActive = true; // Binance verisini kes</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>let target = type === 'pump' ? currentPrice * 1.05 : currentPrice * 0.95; // %5 oynat</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>// Animasyonlu fiyat değişimi</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>let interval = setInterval(() =&gt; {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>if(type === 'pump') currentPrice += 150;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>else currentPrice -= 150;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>updateUI(currentPrice);</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>// Hedefe gelince veya kullanıcı durdurursa</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>if((type === 'pump' &amp;&amp; currentPrice &gt;= target) || (type === 'dump' &amp;&amp; currentPrice &lt;= target)) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>clearInterval(interval);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; { manipulationActive = false; }, 3000); // 3 saniye sonra normale dön</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}, 50);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>function setManualPrice() {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>let val = parseFloat(document.getElementById('manualPrice').value);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if(val &gt; 0) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>manipulationActive = true;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>currentPrice = val;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>updateUI(currentPrice);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>alert("Fiyat " + val + " olarak sabitlendi. Binance verisi kesildi.");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
